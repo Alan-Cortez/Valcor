@@ -1,10 +1,9 @@
 class Usuario:
-    # Asegúrate de tener un sistema de base de datos configurado aquí
+    def __init__(self, id, usuario, contrasena):
+        self.id = id
+        self.usuario = usuario
+        self.contrasena = contrasena
 
-    @staticmethod
-    def obtener_todos():
-        # Este método debería interactuar con la base de datos para obtener los usuarios.
-        return [
-            {"id": 1, "nombre": "Alan", "apellido": "Valdez"},
-            {"id": 2, "nombre": "Luis", "apellido": "Valdez"}
-        ]
+    def to_dict(self):
+        """Convierte el objeto a un diccionario para facilitar su uso en la vista"""
+        return {"id": self.id, "usuario": self.usuario, "contrasena": self.contrasena}
