@@ -6,6 +6,7 @@ app = Flask(__name__)
 # Instanciar el controlador de usuarios
 usuario_controller = UsuarioController()
 
+# Definir las rutas usando los métodos del controlador
 @app.route('/')
 def index():
     return usuario_controller.index()
